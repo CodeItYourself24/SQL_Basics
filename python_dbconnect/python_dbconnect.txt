@@ -1,0 +1,32 @@
+
+<<< Initial setup >>>
+
+>> install mysql
+    for mac: 
+        brew install mysql
+
+    start server:
+        brew services start mysql
+
+>> Secure Your MySQL Installation (Optional, but Recommended):
+    mysql_secure_installation
+
+>> access MySQL:
+    mysql -u root -p
+
+>> steps to setup database fter starting the server:
+
+1.CREATE DATABASE your_database_name;
+2.CREATE USER 'your_username'@'localhost' IDENTIFIED BY 'your_password';
+    CREATE USER 'testdb'@'localhost' IDENTIFIED BY 'Sandeep@123';
+3.GRANT ALL PRIVILEGES ON your_database_name.* TO 'your_username'@'localhost';
+    GRANT ALL PRIVILEGES ON test_database.* TO 'testdb'@'localhost';
+4.FLUSH PRIVILEGES;
+
+************** done with server startup and database creation ****************
+
+to use/connect to the database created in mysql
+
+pip install mysql-connector-python      <install mysql connector>
+
+and refer to dbconnect_basic.py
